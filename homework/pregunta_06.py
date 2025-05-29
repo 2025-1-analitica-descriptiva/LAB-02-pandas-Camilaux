@@ -4,7 +4,7 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 `tbl2.tsv`. En este laboratorio solo puede utilizar las funciones y 
 librerias de pandas para resolver las preguntas.
 """
-
+from homework.read_data import tbl1
 
 def pregunta_06():
     """
@@ -15,3 +15,10 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
+    df = tbl1()
+
+    # Obtener los valores únicos de la columna 'c4', convertirlos a mayúsculas y ordenarlos alfabéticamente
+    valores_unicos = sorted(df['c4'].unique())
+    valores_unicos = [valor.upper() for valor in valores_unicos if isinstance(valor, str)]
+
+    return valores_unicos

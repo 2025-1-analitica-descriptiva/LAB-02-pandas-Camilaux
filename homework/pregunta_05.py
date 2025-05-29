@@ -4,7 +4,7 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 `tbl2.tsv`. En este laboratorio solo puede utilizar las funciones y 
 librerias de pandas para resolver las preguntas.
 """
-
+from homework.read_data import tbl0
 
 def pregunta_05():
     """
@@ -20,3 +20,9 @@ def pregunta_05():
     E    9
     Name: c2, dtype: int64
     """
+    df = tbl0()
+
+    # Calcular el valor máximo de 'c2' por cada letra en la columna 'c1'
+    maximo_por_letra = df.groupby('c1')['c2'].max()
+    
+    return maximo_por_letra.sort_index() 
